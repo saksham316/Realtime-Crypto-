@@ -1,6 +1,6 @@
 # Realtime-Crypto-
 
-# Realtime Crypto Data 
+# Realtime Crypto Data
 
 A simple real-time application using Socket.IO with a Node.js backend and a React frontend.
 
@@ -41,4 +41,9 @@ A simple real-time application using Socket.IO with a Node.js backend and a Reac
    npm run dev
    ```
 
+## env example (Backend)
 
+PORT = "6990"
+MONGO_URL = "Your Mongo Url"
+NODE_ENV="dev"
+LIVE_COIN_WATCH_API = "Your Live Coin Watch Api Key"

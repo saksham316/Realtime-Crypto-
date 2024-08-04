@@ -19,6 +19,9 @@ mongo();
 
 socket.on("connection", (socket) => {
   console.log("Socket Connected Successfully");
+  socket.on("disconnect", () => {
+    console.log("Socket disconnected successfully");
+  });
 });
 
 server.listen(PORT, () => {
