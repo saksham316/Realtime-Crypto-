@@ -1,17 +1,17 @@
 import React, { FC, useEffect, useState } from "react";
+import { setLiveCoinWatchData } from "../../../redux/slices/liveWatchSlice";
+import { useAppDispatch, useAppSelector } from "../../../redux/store";
 import { socket } from "../../../socket";
-import { ILiveCoinWatchData } from "./types";
 
 const CryptoTable: FC = () => {
-  // states----------------------------------------------------------------------------
-  const [liveWatchData, setLiveWatchData] = useState<ILiveCoinWatchData[] | []>(
-    []
-  );
+  // hooks----------------------------------------------------------------------------
+  const dispatch = useAppDispatch();
+  const { liveCoinWatchData } = useAppSelector((state) => state.liveWatch);
   // ---------------------------------------------------------------------------------------
-  // useEffects----------------------------------------------------------------------------
+  // useEffects----------------------------------------------------------------------------F
   useEffect(() => {
     socket.on("data-received", (data) => {
-      setLiveWatchData(JSON.parse(data));
+      dispatch(setLiveCoinWatchData(JSON.parse(data)));
     });
     return () => {
       socket.off("data-received");
@@ -21,8 +21,8 @@ const CryptoTable: FC = () => {
 
   return (
     <div className="p-10 h-[85vh] overflow-hidden">
-      <div className="relative overflow-y-scroll">
-        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
+      <div className="relative h-[100%] overflow-scroll ">
+        <table className="w-full  text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
@@ -36,9 +36,9 @@ const CryptoTable: FC = () => {
               </th>
             </tr>
           </thead>
-          <tbody>
-            {Array.isArray(liveWatchData) && liveWatchData.length ? (
-              liveWatchData.map((liveData, index) => {
+          <tbody className="">
+            {Array.isArray(liveCoinWatchData) && liveCoinWatchData.length ? (
+              liveCoinWatchData.map((liveData, index) => {
                 return (
                   <tr
                     className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"

@@ -12,3 +12,7 @@ export interface ILiveCoinWatchData {
     year: number;
   };
 }
+
+export interface ILiveCoinWatchState {
+  liveCoinWatchData: ILiveCoinWatchData[] | [];
+}
