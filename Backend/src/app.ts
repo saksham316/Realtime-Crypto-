@@ -8,5 +8,10 @@ import morgan from "morgan";
 const app: Application = express();
 export const server = http.createServer(app);
 
-process.env.NODE_ENV === "dev" && app.use(morgan("combined"));
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+  })
+);
 
+process.env.NODE_ENV === "dev" && app.use(morgan("combined"));

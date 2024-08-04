@@ -1,6 +1,16 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
+import { socket } from "../../../socket";
 
 const CryptoTable: FC = () => {
+  // useEffects----------------------------------------------------------------------------
+  useEffect(() => {
+    socket.on("data-received", () => {});
+    return () => {
+      socket.off("data-received");
+    };
+  }, []);
+  //   -------------------------------------------------------------------------------------
+
   return (
     <div className="p-10 h-[85vh]">
       <div className="relative overflow-x-auto">
