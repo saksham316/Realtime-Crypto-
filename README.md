@@ -51,3 +51,8 @@ A simple real-time application using Socket.IO with a Node.js backend and a Reac
 
 ## env example (Frontend)
 - `REACT_APP_NODE_APP_DEV_URL`: Your Backend Application URl.
+
+![image](https://github.com/user-attachments/assets/7297c412-d7e7-49c2-83f0-855a51c7c5be)
+
+![image](https://github.com/user-attachments/assets/416caabc-8873-4b20-bc70-4a4744370ceb)
+
