@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from "axios";
+import { liveWatchModel } from "../models/liveWatchModel";
 import { socket } from "../server";
 import { ILiveCoinWatchApiRes } from "./types";
 
@@ -20,6 +21,8 @@ export const liveCoinWatch: () => void = async () => {
       },
     }
   );
+
+  const liveWatchDocs = await liveWatchModel.insertMany(liveCoinWatchData.data);
 
   socket.emit("data-received", JSON.stringify(liveCoinWatchData.data));
 };
