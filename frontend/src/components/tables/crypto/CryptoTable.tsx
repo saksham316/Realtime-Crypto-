@@ -20,9 +20,9 @@ const CryptoTable: FC = () => {
   //   -------------------------------------------------------------------------------------
 
   return (
-    <div className="p-10 h-[85vh]">
-      <div className="relative overflow-x-auto">
-        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <div className="p-10 h-[85vh] overflow-hidden">
+      <div className="relative overflow-y-scroll">
+        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
@@ -37,11 +37,13 @@ const CryptoTable: FC = () => {
             </tr>
           </thead>
           <tbody>
-            {Array.isArray(liveWatchData) &&
-              liveWatchData.length &&
-              liveWatchData.map((liveData) => {
+            {Array.isArray(liveWatchData) && liveWatchData.length ? (
+              liveWatchData.map((liveData, index) => {
                 return (
-                  <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                  <tr
+                    className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                    key={index}
+                  >
                     <th
                       scope="row"
                       className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
@@ -52,7 +54,19 @@ const CryptoTable: FC = () => {
                     <td className="px-6 py-4">{liveData.volume}</td>
                   </tr>
                 );
-              })}
+              })
+            ) : (
+              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th
+                  scope="row"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                  Loading...
+                </th>
+                <td className="px-6 py-4">Loading...</td>
+                <td className="px-6 py-4">Loading...</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>

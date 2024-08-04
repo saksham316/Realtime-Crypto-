@@ -10,7 +10,7 @@ export const liveCoinWatch: () => void = async () => {
       sort: "rank",
       order: "ascending",
       offset: 0,
-      limit: 10,
+      limit: 20,
       meta: false,
     },
     {
