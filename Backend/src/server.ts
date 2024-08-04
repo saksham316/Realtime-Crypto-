@@ -3,11 +3,12 @@ import dotenv from "dotenv";
 import { server } from "./app";
 import { mongo } from "./db/mongodb";
 import { Server as socketServer } from "socket.io";
+import { liveCoinWatch } from "./utils";
 // -----------------------------------------------------------------------------------------
 
 dotenv.config();
 const PORT = process.env.port || 6969;
-const socket = new socketServer(server, {
+export const socket = new socketServer(server, {
   cors: {
     origin: "http://localhost:3000", // Update this to match your React app's URL
     methods: ["GET", "POST"],
@@ -23,6 +24,13 @@ socket.on("connection", (socket) => {
     console.log("Socket disconnected successfully");
   });
 });
+
+// Fetching the live coin data
+liveCoinWatch();
+
+setInterval(() => {
+  liveCoinWatch();
+}, 5000);
 
 server.listen(PORT, () => {
   console.log(`Server Started at PORT ${PORT}`);
