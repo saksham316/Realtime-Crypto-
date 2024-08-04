@@ -48,3 +48,9 @@ A simple real-time application using Socket.IO with a Node.js backend and a Reac
 - `NODE_ENV`: The environment in which your app is running (`dev` in this case).
 - `LIVE_COIN_WATCH_API`: Your Live Coin Watch API key.
 - `LIVE_COIN_WATCH_API_URL`: The Live Coin Watch API URL.
+
+
+![image](https://github.com/user-attachments/assets/7297c412-d7e7-49c2-83f0-855a51c7c5be)
+
+![image](https://github.com/user-attachments/assets/416caabc-8873-4b20-bc70-4a4744370ceb)
+
