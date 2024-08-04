@@ -43,8 +43,8 @@ A simple real-time application using Socket.IO with a Node.js backend and a Reac
 
 ## env example (Backend)
 
-PORT = "6990"
-MONGO_URL = "Your Mongo Url"
-NODE_ENV="dev"
-LIVE_COIN_WATCH_API = "Your Live Coin Watch Api Key"
-LIVE_COIN_WATCH_API = "https://api.livecoinwatch.com/coins/list"
+- `PORT`: The port your Node.js server will run on.
+- `MONGO_URL`: Your MongoDB connection string.
+- `NODE_ENV`: The environment in which your app is running (`dev` in this case).
+- `LIVE_COIN_WATCH_API`: Your Live Coin Watch API key.
+- `LIVE_COIN_WATCH_API_URL`: The Live Coin Watch API URL.
