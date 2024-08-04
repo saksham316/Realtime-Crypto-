@@ -1,6 +1,6 @@
 # Realtime-Crypto-
 
-# Socket.IO Example
+# Realtime Crypto Data 
 
 A simple real-time application using Socket.IO with a Node.js backend and a React frontend.
 
