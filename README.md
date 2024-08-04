@@ -13,8 +13,8 @@ A simple real-time application using Socket.IO with a Node.js backend and a Reac
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/socket-io-client.git
-   cd socket-io-client
+   git clone [https://github.com/your-username/socket-io-client.git](https://github.com/saksham316/Realtime-Crypto-.git)
+   cd frontend
    ```
 2. **Install dependencies**:
    ```bash
@@ -29,8 +29,8 @@ A simple real-time application using Socket.IO with a Node.js backend and a Reac
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/socket-io-server.git
-   cd socket-io-server
+   git clone [https://github.com/your-username/socket-io-server.git](https://github.com/saksham316/Realtime-Crypto-.git)
+   cd Backend
    ```
 2. **Install dependencies**:
    ```bash
@@ -41,8 +41,4 @@ A simple real-time application using Socket.IO with a Node.js backend and a Reac
    npm run dev
    ```
 
-## Usage
-
-- **Frontend**: Navigate to `http://localhost:3000` to see the React app.
-- **Backend**: Server runs at `http://localhost:5000`.
 
