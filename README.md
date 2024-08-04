@@ -1,6 +1,6 @@
 # Realtime-Crypto-
 
-# Realtime Crypto Data
+# Realtime Crypto Data (Without Redux -- Redux Coming Soon...)
 
 A simple real-time application using Socket.IO with a Node.js backend and a React frontend.
 
